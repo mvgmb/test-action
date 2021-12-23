@@ -8,15 +8,21 @@ inputs:
   b:
     description: Image Tag
     required: false
+  c:
+    description: Image Tag
+    required: false
 runs:
   using: composite
   steps:
     - name: Configure GitHub SSH
       run: |
-        echo '${{ inputs.a }}' 
-        echo '${{ inputs.b }}'
-        echo "${{ inputs.a }}" 
-        echo "${{ inputs.b }}"
         echo ${{ inputs.a }}
+        echo '${{ inputs.a }}' 
+        echo "${{ inputs.a }}" 
         echo ${{ inputs.b }}
+        echo '${{ inputs.b }}'
+        echo "${{ inputs.b }}"
+        echo ${{ inputs.c }}
+        echo '${{ inputs.c }}'
+        echo "${{ inputs.c }}"
       shell: bash
